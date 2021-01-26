@@ -1,0 +1,26 @@
+#livestream_page {
+    margin-top:3vh;
+}
+
+/* #video {
+    width:50vw;
+    height:50vh;
+}
+
+#screenBtn {
+    margin:2vh 0;
+}
+
+#status-img {
+    width:10px;
+    height:10px;
+    margin-top: 10px;
+} */
+h1 {
+    margin-bottom: 5vh;;
+}
+#streamkey {
+    padding:1vh;
+    border-radius: 12px;
+    background-color: rgb(233, 233, 233);
+}

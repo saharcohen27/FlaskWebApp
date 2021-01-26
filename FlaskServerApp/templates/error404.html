@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/error404.css') }}">
+<title>404 ERROR</title>
+{% endblock %} 
+
+{% block body %} 
+    <div id='errorPage'>
+        <center>
+            <div class="error">
+                <b>404 ERROR!</b><br>
+            </div>
+            <div id='ques'>The Page You Want Was <b>Not Found.</b><br> Or You Need To Login.</div>
+        </center>
+    </div>
+{% endblock %} 

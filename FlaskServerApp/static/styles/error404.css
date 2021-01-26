@@ -1,0 +1,15 @@
+#errorPage{
+    margin-top:10vh;
+}
+.error {
+    font-size:7vh;
+    color:rgb(250, 35, 35);
+}
+
+#ques {
+    margin-top:10vh;
+    font-size:3vh;
+    background-color: rgb(19, 19, 19);
+    padding: 3vh;
+    color: white;
+}

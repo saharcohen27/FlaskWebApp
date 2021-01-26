@@ -1,0 +1,72 @@
+#profile-page {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+#banner {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    background-image: linear-gradient(#8E2DE2, #4A00E0);
+}
+
+#user-img {
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    border:3px solid white;
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0);
+    margin-top: -6vh; /* half the height size */
+}
+#desc {
+    font-family: adobe-garamond-pro, serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #343434;
+}
+#username {
+    margin-top:2vh;
+    margin-bottom:1vh;
+
+}
+
+#addDescBtn {
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: white;
+    padding: 8px;
+}
+
+#addDescBtn:hover {
+    transition: 0.7s ease;
+    color:white;
+    border:0;
+    background: linear-gradient(#8E2DE2, #4b00e09a);
+}
+
+
+#txtDesc {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding:2vh;
+    width: 30vw;
+    font-size: 18px;
+}
+
+#txtDesc:focus {
+    transition:1s ease;
+    width: 60vw;
+}
+
+#saveDesc {
+    border:0;
+    border-radius: 12px;
+    color:white;
+    background-color: green;
+    box-shadow: 0px 0px 10px 0px rgb(0, 128, 0);
+    font-size:16px;
+    padding:1vh;
+    margin-left: 2vh;
+    margin-bottom: -2vh;
+}

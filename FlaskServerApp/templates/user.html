@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/profile.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/user.css') }}">
+<title>Profile</title>
+{% endblock %} 
+
+{% block body %} 
+<div id='profile-page'>
+    <div id="banner"></div>
+    <center>
+        <img  alt='profileImage' id="user-img" class='undragable'
+            src="{{ userData[5] if userData[5] else url_for('static', filename='images/user_profile.png') }}"/>
+        
+        <h1 id='username'> {{ userData[0] }} </h1>
+        <div id="description">
+            {% if userData[3]: %}
+                <p id='desc' >{{ userData[3] }}</p>
+            {% endif %}
+        </div>
+        <button id='follow-btn'>Follow</button>
+    </center>
+</div>
+{% endblock %} 

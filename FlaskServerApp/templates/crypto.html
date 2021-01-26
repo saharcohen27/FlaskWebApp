@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/crypto.css') }}">
+<title>Crypto</title>
+{% endblock %} 
+
+{% block body %} 
+<div id='crypto_page'>
+    <h1>Crypto</h1>
+    <div id='tbl'>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Market Cap</th>
+                <th>Change (24h)</th>
+                <th>Volume (24h)</th>
+                <th>Circulating Supply</th>
+            </tr>
+            {% for currency in currencies: %} 
+                <tr class='currencyRow'>
+                    <td><span>{{ currency[0] }}.</span></td>
+                    <td>
+                        <a href="{{ '/crypto/'+currency[1] }}">
+                            <img src={{ currency[7] }} class="tokenicon"/>{{ currency[1] }}
+                        </a>
+                    </td>
+                    {% for item in range(2): %}
+                        <td><span>{{ currency[item+2] }}</span></td> 
+                    {%endfor%}
+                    
+                    {% if currency[4] < 0: %}
+                        <td class='neg'>{{ currency[4] }}%</td>
+                    {% else %}
+                        <td class='pos'>{{ currency[4] }}%</td>
+                    {% endif %}
+                    
+                    {% for item in range(2): %}
+                        <td><span>{{ currency[item + 5] }}</span></td> 
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+{% endblock %} 

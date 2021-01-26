@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<title>Live Control</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/livestreamControl.css') }}">
+{% endblock %} 
+
+{% block body %} 
+<div id='livestream_page'>
+    <center>
+        <h1>Live Control</h1>
+        <span id='streamkey'>Stream Key</span>
+    </center>
+</div>
+<script src="{{ url_for('static', filename='javascript/livestreamControl.js') }}"></script>
+<script>load("{{ key }}");</script>
+{% endblock %} 

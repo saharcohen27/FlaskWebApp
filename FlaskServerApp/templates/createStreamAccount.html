@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/createStreamAccount.css') }}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='javascript/createStreamAccount.js') }}"></script> 
+<title>Create Stream Account</title>
+{% endblock %} 
+
+{% block body %} 
+    <div id='csa_page'>
+        <center>
+            <div id='main'>
+                <div id='wc'>Welcome!<br>Join Our Streamers Community!</div>
+                <button onclick='createStreamAccount();' id='create'>Create Stream Account</button>
+            </div>
+        </center>
+    </div>
+{% endblock %} 

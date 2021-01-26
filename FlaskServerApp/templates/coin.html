@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %} 
+
+{% block title %} 
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/coin.css') }}">
+<title>{{ coin[1] }} | Crypto</title>
+{% endblock %} 
+
+{% block body %} 
+    <div id='coin_page'>
+        <center>
+            <div>
+                <img style="vertical-align:middle; margin:2vh" src="{{ coin[7] }}" alt='coin-image'/>
+                <span id="page-title">{{ coin[6].split(' ')[1] }}</span>
+            </div>
+            <div class="chart">
+                <div id="chartContainer"></div>
+            </div>
+        </center>
+    </div>
+    
+<script>
+  window.onload = function () {
+    var title = "{{ coin[1] }}" + '/BTC'
+    var dataPoints = [];
+    var stockChart = new CanvasJS.StockChart("chartContainer",{
+      theme: "light1",
+      title:{
+        text: "{{ coin[1] }}",
+      },
+      charts: [{
+        axisY: {
+          title: "{{ coin[6].split(' ')[1] }}",
+          prefix: "$"
+        },
+        data: [{
+          type: "candlestick",
+          yValueFormatString: "$#,###.00",
+          dataPoints: dataPoints
+        }]
+      }],
+      rangeSelector: {
+        inputFields: {
+          startValue: new Date(2018, 06, 01),
+          endValue: new Date(2018, 08, 01)
+        }
+      }
+    });
+    data = {{ history }}
+    for(var i = 0; i < data.length; i++) {
+      dataPoints.push({x: new Date(data[i][0]), y: [Number(data[i][1]), Number(data[i][2]), Number(data[i][3]), Number(data[i][4])]});
+    }
+    stockChart.render()
+  }
+</script>
+
+{% endblock %} 

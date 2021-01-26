@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/auth.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/popup.css') }}">
+        <meta name="google-signin-client_id" content="269082939511-uv3rgmr38gq1lsgr8ritl3qskbqbffds.apps.googleusercontent.com">
+        <title>Login</title>
+    </head>
+    <body>
+        <div id='Box'>
+            <img class='undragable' id='circle' src='static/images/top.png'></img>
+            <img class='slideDown undragable' id='usr-image' src='static/images/user_profile.png' alt='usr-image'/>
+            <div>
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <center><div id='m-content'></div></center>
+                    </div>
+                </div>
+                <form method="POST" action="/login">
+                    <center>
+                        <table>
+                            <tr>
+                                <td><label for="uname"><b>Username</b></label></td>
+                                <td><input id="uname" class="inputs" type="text" placeholder="Enter Username" name="uname" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="psw"><b>Password</b></label></td>
+                                <td><input id="psw" class="inputs" type="password" placeholder="Enter Password" name="psw" required></td>
+                            </tr>
+                        </table>
+                        <button type="submit">Login</button>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        {% if unsuccessfully: %}
+                            <div style="color:red; margin-top:1.5vh;"">Login Unsuccessful</div>
+                        {% endif %}
+                    </center>
+                        
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember">Remember me
+                        </label>
+                        <br>
+                    </div>
+                    <a href="#" class='bottom_links'>Forgot Password?</a>
+                    <a href="/register" class='bottom_links'>Don't Have An Account?</a>
+                </form>
+            </div>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='javascript/login.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+<link rel="stylesheet" type="text/css" href="static/styles/main.css">
+<title>Sahar Cohen</title>
+{% endblock %} 
+
+{% block body %} 
+<div id='page'>
+    <center>
+        <div id='page-title'>{{ username }}</div>
+        <div id='grid'>
+            <a href='/btc-wallet'><div class="box ltr" style='background:blue;'>
+                <span class="boxTitle">Bitcoin Wallet</span>
+                <img class='undragable' src='static/images/cryptoicon.png' alt='icon'/>
+            </div></a>
+            <a href='/crypto'><div class="box rtl" style='background:red;'>
+                <span class="boxTitle">Graphs</span>
+                <img class='undragable' src='static/images/stockicon.png' alt='icon'/>
+            </div></a>
+            <a href='#' onclick="signOut();">
+                <div class="box ltr" style='background:rgb(37, 124, 37);'>
+                <span class="boxTitle">Logout</span>
+                <img class='undragable' src='static/images/logouticon.png' alt='icon'/>
+            </div></a>
+            <a href='#'><div class="box rtl" style='background:rgb(255, 123, 0);'>
+                <span class="boxTitle">News</span>
+                <img class='undragable' src='static/images/newsicon.png' alt='icon'/>
+            </div></a>
+        </div>
+    </center>
+</div>
+{% endblock %} 

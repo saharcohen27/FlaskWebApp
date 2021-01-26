@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+	<meta name="google-signin-client_id" content="269082939511-uv3rgmr38gq1lsgr8ritl3qskbqbffds.apps.googleusercontent.com">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/base.css') }}">
+	{% block title %} 
+		SiteName 
+	{% endblock %} 
+	<script src="{{ url_for('static', filename='javascript/base.js') }}"></script>
+</head> 
+<body> 
+	<center>
+		<header>
+			<nav id='navbar'> 
+				<a class='links' href="/profile">Profile</a> 
+				<a class='links' href="/live">Live</a> 
+				<a class='links' href="/login">Dashboard</a> 
+				<a class='links' href="/crypto">Crypto</a> 
+				<a class='links' onclick="signOut();" href="/logout">Logout</a> 
+			</nav> 
+		</header>
+	</center>
+	<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+	{% block body %} 
+	
+	{% endblock %} 
+</body> 
+</html> 
